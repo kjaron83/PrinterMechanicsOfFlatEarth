@@ -46,7 +46,7 @@ public class SafeScanner {
     
     /**
      * Reads a new line from the input stream.
-     * Throws a {@link ReadingInterruptedException} exception if the user would rather exit.
+     * @throws ReadingInterruptedException if the user would rather exit.
      */
     @Nonnull
     public String nextLineNoEmpty() {
@@ -55,8 +55,8 @@ public class SafeScanner {
     
     /**
      * Reads a new line from the input stream.
-     * Throws a {@link ReadingInterruptedException} exception if the user would rather exit.
      * @param checkExit The first time we do not check whether the user wants to exit.
+     * @throws ReadingInterruptedException if the user would rather exit.
      */
     @Nonnull
     private String nextLineNoEmpty(boolean checkExit) {
@@ -74,7 +74,7 @@ public class SafeScanner {
     
     /**
      * Reads a new line from the input stream and convects it to an int value.
-     * Throws a {@link ReadingInterruptedException} exception if the user would rather exit.
+     * @throws ReadingInterruptedException if the user would rather exit.
      */    
     public int nextInt() {
         return nextInt(false);
@@ -82,8 +82,8 @@ public class SafeScanner {
 
     /**
      * Reads a new line from the input stream and convects it to an int value.
-     * Throws a {@link ReadingInterruptedException} exception if the user would rather exit.
      * @param checkExit The first time we do not check whether the user wants to exit.
+     * @throws ReadingInterruptedException if the user would rather exit.
      */
     private int nextInt(boolean checkExit) {
         String line = nextLineNoEmpty();        
@@ -100,9 +100,9 @@ public class SafeScanner {
     
     /**
      * Reads a new line from the input stream and convects it to an int value.
-     * Throws a {@link ReadingInterruptedException} exception if the user would rather exit.
      * @param min Minimum expected value.
      * @param max Maximum expected value.
+     * @throws ReadingInterruptedException if the user would rather exit.
      */
     public int nextInt(int min, int max) {
         int n = nextInt();
@@ -121,7 +121,7 @@ public class SafeScanner {
 
     /**
      * Reads a new line from the input stream and convects it to a {@link Coordinate}.
-     * Throws a {@link ReadingInterruptedException} exception if the user would rather exit.
+     * @throws ReadingInterruptedException if the user would rather exit.
      */    
     @Nonnull
     public Coordinate nextCoordinate() {
@@ -130,9 +130,8 @@ public class SafeScanner {
 
     /**
      * Reads a new line from the input stream and convects it to a {@link Coordinate}.
-     * Throws a {@link ReadingInterruptedException} exception if the user would rather exit.
-     * @param checkExit
      * @param checkExit The first time we do not check whether the user wants to exit.
+     * @throws ReadingInterruptedException if the user would rather exit.
      */
     @Nonnull
     private Coordinate nextCoordinate(boolean checkExit) {

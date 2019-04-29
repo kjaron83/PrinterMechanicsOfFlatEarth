@@ -5,10 +5,6 @@
  */
 package printermechanicsofflatearth;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -97,13 +93,13 @@ public class MechanicTest {
     }
 
     /**
-     * Test of getOfficeCoordinate method, of class Mechanic.
+     * Test of getOffice method, of class Mechanic.
      */
     @Test
-    public void testGetOfficeCoordinate() {
-        assertEquals(TESTCASE_A_MECHANIC.getOfficeCoordinate(), TESTCASE_A_OFFICE);
-        assertEquals(TESTCASE_B_MECHANIC.getOfficeCoordinate(), TESTCASE_B_OFFICE);
-        assertEquals(TESTCASE_C_MECHANIC.getOfficeCoordinate(), TESTCASE_C_OFFICE);
+    public void testGetOffice() {
+        assertEquals(TESTCASE_A_MECHANIC.getOffice(), TESTCASE_A_OFFICE);
+        assertEquals(TESTCASE_B_MECHANIC.getOffice(), TESTCASE_B_OFFICE);
+        assertEquals(TESTCASE_C_MECHANIC.getOffice(), TESTCASE_C_OFFICE);
     }
 
     /**
@@ -117,27 +113,6 @@ public class MechanicTest {
     }
 
     /**
-     * Test of create method, of class Mechanic.
-     */
-    @Test
-    public void testCreate() {
-        String createString = 
-                TESTCASE_A_NAME + '\n'
-                + TESTCASE_A_FIXED_FEE + '\n'
-                + TESTCASE_A_KILOMETER_FEE + '\n'
-                + TESTCASE_A_OFFICE.getX() + ' ' + TESTCASE_A_OFFICE.getY() + '\n';        
-        InputStream inputStream = new ByteArrayInputStream(createString.getBytes());
-        OutputStream outputStream = new ByteArrayOutputStream();
-        
-        Mechanic mechanic = Mechanic.create(inputStream, outputStream);
-        assertEquals(TESTCASE_A_NAME, mechanic.getName());
-        assertEquals(TESTCASE_A_FIXED_FEE, mechanic.getFixedFee());
-        assertEquals(TESTCASE_A_KILOMETER_FEE, mechanic.getKilometerFee());
-        assertEquals(TESTCASE_A_OFFICE.getX(), mechanic.getOfficeCoordinate().getX());
-        assertEquals(TESTCASE_A_OFFICE.getY(), mechanic.getOfficeCoordinate().getY());
-    }
-
-    /**
      * Test of cheapest method, of class Mechanic.
      */
     @Test
@@ -146,5 +121,5 @@ public class MechanicTest {
         assertEquals(Mechanic.cheapest(TESTCASE_B_JOB, TESTCASE_A_MECHANIC, TESTCASE_B_MECHANIC, TESTCASE_C_MECHANIC), TESTCASE_C_MECHANIC);
         assertEquals(Mechanic.cheapest(TESTCASE_C_JOB, TESTCASE_A_MECHANIC, TESTCASE_B_MECHANIC, TESTCASE_C_MECHANIC), TESTCASE_B_MECHANIC);
     }
-    
+
 }

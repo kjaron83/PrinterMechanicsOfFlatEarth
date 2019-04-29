@@ -1,9 +1,9 @@
 /*
- * PrintermechanicsofflatearthSuite.java
- * Create Date: Apr 26, 2019
+ * RootSuite.java
+ * Create Date: Apr 29, 2019
+ * Copyright: SONY MUSIC ENTERTAINMENT 
  * Initial-Author: Janos Aron Kiss
  */
-package printermechanicsofflatearth;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -17,8 +17,8 @@ import org.junit.runners.Suite;
  * @author Janos Aron Kiss
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({MechanicTest.class, CoordinateTest.class})
-public class PrintermechanicsofflatearthSuite {
+@Suite.SuiteClasses({printermechanicsofflatearth.PrintermechanicsofflatearthSuite.class})
+public class RootSuite {
 
     @BeforeClass
     public static void setUpClass() throws Exception {
